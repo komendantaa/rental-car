@@ -1,0 +1,95 @@
+/* react-select renders the menu in a portal, outside the CSS Modules scope, so these stay global. */
+:global(.select__control) {
+  width: 204px;
+  height: 44px;
+  margin-top: 8px;
+  padding: 10px 16px;
+  border: none !important;
+  border-radius: 12px !important;
+  background-color: var(--color-white) !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+:global(.select__placeholder) {
+  color: var(--color-main) !important;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+:global(.select__indicator-separator) {
+  display: none;
+}
+
+:global(.select__dropdown-indicator) {
+  padding: 0 !important;
+  cursor: pointer;
+}
+
+:global(.select__dropdown-indicator svg) {
+  display: none;
+}
+
+:global(.select__dropdown-indicator::before) {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-main);
+  transform: rotate(45deg);
+  margin-top: -4px;
+}
+
+:global(.select__control--menu-is-open .select__dropdown-indicator::before) {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+
+:global(.select__single-value) {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+:global(.select__menu) {
+  padding: 4px 8px 14px 12px;
+  margin-top: 4px;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+  background-color: var(--color-white);
+}
+
+:global(.select__menu-list) {
+  max-height: 204px !important;
+  overflow-y: auto !important;
+}
+
+:global(.select__menu-list::-webkit-scrollbar) {
+  width: 8px;
+}
+
+:global(.select__menu-list::-webkit-scrollbar-thumb) {
+  background-color: var(--color-border);
+  border-radius: 10px;
+}
+
+:global(.select__option) {
+  margin-bottom: 8px !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  line-height: 1.25;
+  color: var(--color-label) !important;
+  background-color: var(--color-white);
+  cursor: pointer !important;
+}
+
+:global(.select__option--is-focused) {
+  color: var(--color-main) !important;
+  background-color: var(--color-white) !important;
+}
+
+:global(.select__option--is-selected) {
+  background-color: transparent !important;
+  color: var(--color-main) !important;
+}
