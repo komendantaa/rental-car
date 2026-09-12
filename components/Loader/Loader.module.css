@@ -1,0 +1,19 @@
+.loader {
+  width: var(--loader-size, 72px);
+  height: var(--loader-size, 72px);
+  border: var(--loader-thickness, 5px) solid var(--loader-track-color, var(--color-input));
+  border-bottom-color: var(--loader-accent-color, var(--color-accent));
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
