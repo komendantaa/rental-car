@@ -1,0 +1,105 @@
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Custom properties carry the state colors so the error state always wins,
+   whatever the focus/filled selector specificity would otherwise decide. */
+.inputContainer {
+  position: relative;
+  --field-bg: var(--color-input);
+  --border-color: transparent;
+  --label-color: var(--color-label);
+  --notch-bg: var(--color-white);
+}
+
+.inputContainer:has(.input:focus) {
+  --border-color: var(--color-accent);
+  --label-color: var(--color-accent);
+}
+
+.errorInput,
+.errorInput:has(.input:focus) {
+  --field-bg: var(--color-error-bg);
+  --border-color: var(--color-error);
+  --label-color: var(--color-error);
+  --notch-bg: var(--color-error-bg);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--field-bg);
+  outline: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--color-main);
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+.textarea {
+  resize: none;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  max-width: calc(100% - 32px);
+  padding: 2px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--label-color);
+  border-radius: 8px;
+  transition:
+    top 250ms ease,
+    font-size 250ms ease,
+    color 250ms ease,
+    background-color 250ms ease;
+}
+
+.textarea + .label {
+  top: 12px;
+  transform: none;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: -9px;
+  transform: none;
+  background-color: var(--notch-bg);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.errorIcon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--color-error);
+}
+
+.errorText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--color-error);
+}

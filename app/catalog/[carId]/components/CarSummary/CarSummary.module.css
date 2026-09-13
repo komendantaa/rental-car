@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.article {
+  padding-top: 5px;
+  font-weight: 500;
+  color: var(--color-label);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.price {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--color-accent);
+}
+
+.description {
+  margin-bottom: 68px;
+  font-weight: 500;
+}

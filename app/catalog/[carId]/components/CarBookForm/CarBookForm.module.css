@@ -1,0 +1,32 @@
+.container {
+  margin-top: 32px;
+  width: 640px;
+  max-width: 100%;
+  padding: 32px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formTitle {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-main);
+}
+
+.formDescription {
+  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--color-label);
+}
+
+.submitButton {
+  margin-top: 8px;
+}
